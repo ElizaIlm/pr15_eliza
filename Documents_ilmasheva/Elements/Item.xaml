@@ -4,9 +4,53 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Documents_ilmasheva.Elements"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             mc:Ignorable="d"
+             x:Name="userControl" Height="185" Width="413">
+    <Border BorderBrush="#FF808080" BorderThickness="1" Margin="5" CornerRadius="5">
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Изображение -->
+            <Image x:Name="img" Source="/Image/icon-black.png" Width="40" Height="40" Margin="0,0,10,0"/>
+
+            <!-- Информационная панель -->
+            <StackPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Наименование:" x:Name="IName" FontWeight="Bold" Margin="0,0,5,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Ответственный:" FontWeight="Bold" Margin="0,0,5,0"/>
+                    <TextBlock x:Name="IUser" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="ICode" />
+                    <TextBlock Text="Дата поступления:" FontWeight="Bold"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="IDate"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Статус:" FontWeight="Bold" Margin="0,0,5,0"/>
+                    <TextBlock x:Name="IStatus"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Направление:" FontWeight="Bold" Margin="0,0,5,0"/>
+                    <TextBlock x:Name="IDirect" />
+                </StackPanel>
+                <TextBlock Text="Код документа:" FontWeight="Bold"/>
+            </StackPanel>
+
+            <!-- Кнопки -->
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal">
+                <Button Content="Изменить" Width="80" Margin="5" Click="EditDocument"/>
+                <Button Content="Удалить" Width="80" Margin="5" Click="DeleteDocument"/>
+            </StackPanel>
+        </Grid>
+    </Border>
 </UserControl>

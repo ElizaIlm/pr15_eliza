@@ -66,8 +66,8 @@ namespace Documents_ilmasheva.Classes
                 $"'{this.src}', " +
                 $"'{this.name}', " +
                 $"'{this.user}', " +
-                $"{this.id_document}, " +
-                $"'{this.date:dd.MM.yyyy}', " +
+                $"{this.id_document}', " +
+                $"'{this.date.ToString("dd.MM.yyyy")}', " +
                 $"{this.status}, " +
                 $"'{this.vector}')", connection);
 
